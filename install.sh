@@ -1,6 +1,6 @@
 sudo mkdir -p /usr/share/fonts/truetype/msttcorefonts/
 cd /usr/share/fonts/truetype/msttcorefonts/
-sudo wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeui.ttfraw=true -O segoeui.ttf # regular
+sudo wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeui.ttf?raw=true -O segoeui.ttf # regular
 sudo wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuib.ttf?raw=true -O segoeuib.ttf # bold
 sudo wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuii.ttf?raw=true -O segoeuii.ttf # italic
 sudo wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuiz.ttf?raw=true -O segoeuiz.ttf # bold italic
