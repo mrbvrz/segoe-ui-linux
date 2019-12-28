@@ -1,6 +1,6 @@
 # Segoe-UI Font on Linux (Ubuntu)
 
-
+<p align="center"><img src="screenshot.png" alt="segoe-ui font" width="700"/></div></p>
 
 ## How to Install
 
