@@ -13,9 +13,7 @@
 
 Open `terminal` and run the command below
 ```console
-$ curl -L https://raw.githubusercontent.com/mrbvrz/segoe-ui-linux/master/install.sh -o install.sh
-$ chmod 775 install.sh
-$ ./install.sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/mrbvrz/segoe-ui-linux/master/install.sh)"
 ```
 
 [Source](https://en.wikipedia.org/wiki/Segoe)
