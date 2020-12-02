@@ -12,8 +12,11 @@
 ## How to install it
 
 Open `terminal` and run the command below
-```console
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/mrbvrz/segoe-ui-linux/master/install.sh)"
+
+```
+wget https://raw.githubusercontent.com/mrbvrz/segoe-ui-linux/master/install.sh
+chmod +x install.sh
+./install.sh
 ```
 
 [Source](https://en.wikipedia.org/wiki/Segoe)
