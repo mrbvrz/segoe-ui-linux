@@ -23,10 +23,9 @@ chmod +x install.sh
 
 Github with Segoe UI font looks better (in the example below displays the [papirus-icon](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) repo)
 
-### Before
-<p align="center"><img src="img/before.png"></div></p>
-
-### After
-<p align="center"><img src="img/after.png"></div></p>
+|   Images (Screenshot)      | Description |
+|:----:  | :----:  |
+| <p align="center"><img src="img/before.png"></div></p>     |  Without Segoe-UI    |
+| <p align="center"><img src="img/after.png"></div></p>   |  With Segoe-UI     |
 
 [Source](https://en.wikipedia.org/wiki/Segoe)
