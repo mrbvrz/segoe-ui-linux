@@ -19,4 +19,14 @@ chmod +x install.sh
 ./install.sh
 ```
 
+## Sample:
+
+Github with Segoe UI font looks better (in the example below displays the [papirus-icon](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) repo)
+
+### Before
+<p align="center"><img src="sample/before.png"></div></p>
+
+### After
+<p align="center"><img src="sample/after.png"></div></p>
+
 [Source](https://en.wikipedia.org/wiki/Segoe)
