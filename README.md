@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-<p align="center"><img src="segoe.png" alt="segoe" width="600"/></div></p>
+<p align="center"><img src="img/segoe.png" alt="segoe" width="600"/></div></p>
 
 
 **Segoe** ***(/ˈsiːɡoʊ/ SEE-goh)*** is a typeface, or family of fonts, that is best known for its use by Microsoft. The company uses Segoe in its online and printed marketing materials, including recent logos for a number of products. Additionally, the Segoe UI font sub-family is used by numerous Microsoft applications.
@@ -24,9 +24,9 @@ chmod +x install.sh
 Github with Segoe UI font looks better (in the example below displays the [papirus-icon](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) repo)
 
 ### Before
-<p align="center"><img src="sample/before.png"></div></p>
+<p align="center"><img src="img/before.png"></div></p>
 
 ### After
-<p align="center"><img src="sample/after.png"></div></p>
+<p align="center"><img src="img/after.png"></div></p>
 
 [Source](https://en.wikipedia.org/wiki/Segoe)
