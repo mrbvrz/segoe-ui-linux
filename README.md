@@ -25,7 +25,7 @@ Github with Segoe UI font looks better (in the example below displays the [papir
 
 |   Images (Screenshot)      | Description |
 |:----:  | :----:  |
-| <p align="center"><img src="img/before.png"></div></p>     |  Without Segoe-UI    |
-| <p align="center"><img src="img/after.png"></div></p>   |  With Segoe-UI     |
+| <p align="center"><img src="img/before.png"></div></p>     |  Without Segoe-UI (before installing)   |
+| <p align="center"><img src="img/after.png"></div></p>   |  With Segoe-UI (after installing)    |
 
 [Source](https://en.wikipedia.org/wiki/Segoe)
