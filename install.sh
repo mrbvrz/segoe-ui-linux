@@ -21,7 +21,8 @@ WHITE='\033[01;37m'
 
 # Destination directory
 #ROOT_UID=0
-DEST_DIR="$HOME/.local/share/fonts/Microsoft/TrueType/Segoe UI/"
+DEST_DIR="/usr/share/fonts/Microsoft/TrueType/Segoe UI/"
+WINE_FONT_DIR="$HOME/.wine/drive_c/windows/Fonts/"
 
 #if [ "$UID" -eq "$ROOT_UID" ]; then
 #  DEST_DIR="/usr/local/share/fonts/Microsoft/TrueType/Segoe UI/"
@@ -82,16 +83,60 @@ function continueFont(){
 
 function fontinstall(){
     mkdir -p "$DEST_DIR"
-    wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeui.ttf?raw=true -O "$DEST_DIR"/segoeui.ttf > /dev/null 2>&1 # regular
-    wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuib.ttf?raw=true -O "$DEST_DIR"/segoeuib.ttf > /dev/null 2>&1 # bold
-    wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuii.ttf?raw=true -O "$DEST_DIR"/segoeuii.ttf > /dev/null 2>&1 # italic
-    wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuiz.ttf?raw=true -O "$DEST_DIR"/segoeuiz.ttf > /dev/null 2>&1 # bold italic
-    wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuil.ttf?raw=true -O "$DEST_DIR"/segoeuil.ttf > /dev/null 2>&1 # light
-    wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguili.ttf?raw=true -O "$DEST_DIR"/seguili.ttf > /dev/null 2>&1 # light italic
-    wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuisl.ttf?raw=true -O "$DEST_DIR"/segoeuisl.ttf > /dev/null 2>&1 # semilight
-    wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisli.ttf?raw=true -O "$DEST_DIR"/seguisli.ttf > /dev/null 2>&1 # semilight italic
-    wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisb.ttf?raw=true -O "$DEST_DIR"/seguisb.ttf > /dev/null 2>&1 # semibold
-    wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisbi.ttf?raw=true -O "$DEST_DIR"/seguisbi.ttf > /dev/null 2>&1 # semibold italic
+    if [ -d font ]; then
+        cp font/segoeui.ttf "$DEST_DIR"/segoeui.ttf > /dev/null 2>&1 # regular
+        cp font/segoeuib.ttf "$DEST_DIR"/segoeuib.ttf > /dev/null 2>&1 # bold
+        cp font/segoeuii.ttf "$DEST_DIR"/segoeuii.ttf > /dev/null 2>&1 # italic
+        cp font/segoeuiz.ttf "$DEST_DIR"/segoeuiz.ttf > /dev/null 2>&1 # bold italic
+        cp font/segoeuil.ttf "$DEST_DIR"/segoeuil.ttf > /dev/null 2>&1 # light
+        cp font/seguili.ttf "$DEST_DIR"/seguili.ttf > /dev/null 2>&1 # light italic
+        cp font/segoeuisl.ttf "$DEST_DIR"/segoeuisl.ttf > /dev/null 2>&1 # semilight
+        cp font/seguisli.ttf "$DEST_DIR"/seguisli.ttf > /dev/null 2>&1 # semilight italic
+        cp font/seguisb.ttf "$DEST_DIR"/seguisb.ttf > /dev/null 2>&1 # semibold
+        cp font/seguisbi.ttf "$DEST_DIR"/seguisbi.ttf > /dev/null 2>&1 # semibold italic
+        # extended fontpack 2023 spudgunman fork
+        # https://learn.microsoft.com/en-us/typography/font-list/segoe-ui-emoji
+        cp font/seguibl.ttf "$DEST_DIR"/seguibl.ttf > /dev/null 2>&1 # bold light
+        cp font/seguibli.ttf "$DEST_DIR"/seguibli.ttf > /dev/null 2>&1 # bold light italic
+        cp font/seguiemj.ttf "$DEST_DIR"/seguiemj.ttf > /dev/null 2>&1 # emoji
+        cp font/seguisym.ttf "$DEST_DIR"/seguisym.ttf > /dev/null 2>&1 # symbol
+        cp font/seguihis.ttf "$DEST_DIR"/seguihis.ttf > /dev/null 2>&1 # historic
+
+        if [ -d $WINE_FONT_DIR ]; then
+            cp font/segoeui.ttf "$WINE_FONT_DIR"/segoeui.ttf > /dev/null 2>&1 # regular
+            cp font/segoeuib.ttf "$WINE_FONT_DIR"/segoeuib.ttf > /dev/null 2>&1 # bold
+            cp font/segoeuii.ttf "$WINE_FONT_DIR"/segoeuii.ttf > /dev/null 2>&1 # italic
+            cp font/segoeuiz.ttf "$WINE_FONT_DIR"/segoeuiz.ttf > /dev/null 2>&1 # bold italic
+            cp font/segoeuil.ttf "$WINE_FONT_DIR"/segoeuil.ttf > /dev/null 2>&1 # light
+            cp font/seguili.ttf "$WINE_FONT_DIR"/seguili.ttf > /dev/null 2>&1 # light italic
+            cp font/segoeuisl.ttf "$WINE_FONT_DIR"/segoeuisl.ttf > /dev/null 2>&1 # semilight
+            cp font/seguisli.ttf "$WINE_FONT_DIR"/seguisli.ttf > /dev/null 2>&1 # semilight italic
+            cp font/seguisb.ttf "$WINE_FONT_DIR"/seguisb.ttf > /dev/null 2>&1 # semibold
+            cp font/seguisbi.ttf "$WINE_FONT_DIR"/seguisbi.ttf > /dev/null 2>&1 # semibold italic
+            # extended fontpack 2023 spudgunman fork
+            # https://learn.microsoft.com/en-us/typography/font-list/segoe-ui-emoji
+            cp font/seguibl.ttf "$WINE_FONT_DIR"/seguibl.ttf > /dev/null 2>&1 # bold light
+            cp font/seguibli.ttf "$WINE_FONT_DIR"/seguibli.ttf > /dev/null 2>&1 # bold light italic
+            cp font/seguiemj.ttf "$WINE_FONT_DIR"/seguiemj.ttf > /dev/null 2>&1 # emoji
+            cp font/seguisym.ttf "$WINE_FONT_DIR"/seguisym.ttf > /dev/null 2>&1 # symbol
+            cp font/seguihis.ttf "$WINE_FONT_DIR"/seguihis.ttf > /dev/null 2>&1 # historic
+            echo -e "$GREEN\n Font installed to WINE $LBLUE'$WINE_FONT_DIR'"
+        fi
+
+    else
+        # Download font from github old static link code (not recommended)
+        wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeui.ttf?raw=true -O "$DEST_DIR"/segoeui.ttf > /dev/null 2>&1 # regular
+        wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuib.ttf?raw=true -O "$DEST_DIR"/segoeuib.ttf > /dev/null 2>&1 # bold
+        wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuii.ttf?raw=true -O "$DEST_DIR"/segoeuii.ttf > /dev/null 2>&1 # italic
+        wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuiz.ttf?raw=true -O "$DEST_DIR"/segoeuiz.ttf > /dev/null 2>&1 # bold italic
+        wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuil.ttf?raw=true -O "$DEST_DIR"/segoeuil.ttf > /dev/null 2>&1 # light
+        wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguili.ttf?raw=true -O "$DEST_DIR"/seguili.ttf > /dev/null 2>&1 # light italic
+        wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuisl.ttf?raw=true -O "$DEST_DIR"/segoeuisl.ttf > /dev/null 2>&1 # semilight
+        wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisli.ttf?raw=true -O "$DEST_DIR"/seguisli.ttf > /dev/null 2>&1 # semilight italic
+        wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisb.ttf?raw=true -O "$DEST_DIR"/seguisb.ttf > /dev/null 2>&1 # semibold
+        wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisbi.ttf?raw=true -O "$DEST_DIR"/seguisbi.ttf > /dev/null 2>&1 # semibold italic
+    fi
+
     fc-cache -f "$DEST_DIR"
     echo -e "$GREEN\n Font installed on $LBLUE'$DEST_DIR'"
 }
