@@ -26,7 +26,7 @@ Orginal Repo follows
 Open `terminal` and run the command below
 
 ```
-wget https://raw.githubusercontent.com/mrbvrz/segoe-ui-linux/master/install.sh
+git clone https://github.com/SpudGunMan/segoe-ui-linux
 chmod +x install.sh
 ./install.sh
 ```
