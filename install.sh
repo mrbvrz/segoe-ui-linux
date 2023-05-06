@@ -1,6 +1,6 @@
 #!/bin/bash
 # mrbvrz - https://hasansuryaman.com
-# this is part of my basic bash learning, there may be errors in writing this program.
+# Updated 2023 with more fonts in family Kelly Keeton /SpudGunMan
 
 # Colours Variables
 RESTORE='\033[0m'
