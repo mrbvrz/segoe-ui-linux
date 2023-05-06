@@ -135,6 +135,12 @@ function fontinstall(){
         wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisli.ttf?raw=true -O "$DEST_DIR"/seguisli.ttf > /dev/null 2>&1 # semilight italic
         wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisb.ttf?raw=true -O "$DEST_DIR"/seguisb.ttf > /dev/null 2>&1 # semibold
         wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisbi.ttf?raw=true -O "$DEST_DIR"/seguisbi.ttf > /dev/null 2>&1 # semibold italic
+        # extended fontpack 2023 spudgunman fork
+        wget -q https://github.com/spudgunman/segoe-ui/raw/master/font/seguibl.ttf?raw=true -O "$DEST_DIR"/seguibl.ttf > /dev/null 2>&1 # bold light
+        wget -q https://github.comspudgunman/segoe-ui/raw/master/font/seguibli.ttf?raw=true -O "$DEST_DIR"/seguibli.ttf > /dev/null 2>&1 # bold light italic
+        wget -q https://github.comspudgunman/segoe-ui/raw/master/font/seguiemj.ttf?raw=true -O "$DEST_DIR"/seguiemj.ttf > /dev/null 2>&1 # emoji
+        wget -q https://github.comspudgunman/segoe-ui/raw/master/font/seguisym.ttf?raw=true -O "$DEST_DIR"/seguisym.ttf > /dev/null 2>&1 # symbol
+        wget -q https://github.comspudgunman/segoe-ui/raw/master/font/seguihis.ttf?raw=true -O "$DEST_DIR"/seguihis.ttf > /dev/null 2>&1 # historic
     fi
 
     fc-cache -f "$DEST_DIR"
