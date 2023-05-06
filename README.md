@@ -1,5 +1,16 @@
 # Segoe-UI Font on Linux (Ubuntu)
 
+Forked and updated by SpudGunMan
+
+installs the entire font family including emoji, also installs to wine-prefix if found.
+
+## Changes on this fork
+- new fonts added
+- changed the install directory defaults
+- copy from local not wget-git 
+- looks for and puts the fonts into wine-prefix
+
+
 ## TL;DR
 
 <p align="center"><img src="img/segoe.png" alt="segoe" width="600"/></div></p>
@@ -14,7 +25,7 @@
 Open `terminal` and run the command below
 
 ```
-wget https://raw.githubusercontent.com/mrbvrz/segoe-ui-linux/master/install.sh
+git clone https://github.com/SpudGunMan/segoe-ui-linux
 chmod +x install.sh
 ./install.sh
 ```
