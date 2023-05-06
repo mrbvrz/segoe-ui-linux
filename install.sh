@@ -21,7 +21,7 @@ WHITE='\033[01;37m'
 
 # Destination directory
 #ROOT_UID=0
-DEST_DIR="/usr/share/fonts/Microsoft/TrueType/Segoe UI/"
+DEST_DIR="/usr/share/fonts/Microsoft/TrueType/SegoeUI/"
 WINE_FONT_DIR="$HOME/.wine/drive_c/windows/Fonts/"
 
 #if [ "$UID" -eq "$ROOT_UID" ]; then
@@ -82,7 +82,7 @@ function continueFont(){
 }
 
 function fontinstall(){
-    mkdir -p "$DEST_DIR"
+    sudo mkdir -p "$DEST_DIR"
     if [ -d font ]; then
         cp font/segoeui.ttf "$DEST_DIR"/segoeui.ttf > /dev/null 2>&1 # regular
         cp font/segoeuib.ttf "$DEST_DIR"/segoeuib.ttf > /dev/null 2>&1 # bold
