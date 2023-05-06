@@ -10,7 +10,6 @@ installs the entire font family including emoji, also installs to wine-prefix if
 - copy from local not wget-git 
 - looks for and puts the fonts into wine-prefix
 
-Orginal Repo follows
 
 ## TL;DR
 
