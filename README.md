@@ -2,17 +2,9 @@
 
 installs the entire font family including emoji, also installs to wine-prefix if found.
 
-## Changes on this fork
-- new fonts added
-- changed the install directory defaults
-- copy from local not wget-git 
-- looks for and puts the fonts into wine-prefix
-
-
 ## TL;DR
 
 <p align="center"><img src="img/segoe.png" alt="segoe" width="600"/></div></p>
-
 
 **Segoe** ***(/ˈsiːɡoʊ/ SEE-goh)*** is a typeface, or family of fonts, that is best known for its use by Microsoft. The company uses Segoe in its online and printed marketing materials, including recent logos for a number of products. Additionally, the Segoe UI font sub-family is used by numerous Microsoft applications.
 
