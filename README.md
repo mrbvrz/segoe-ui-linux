@@ -1,7 +1,5 @@
 # Segoe-UI Font on Linux (Ubuntu)
 
-Forked and updated by SpudGunMan
-
 installs the entire font family including emoji, also installs to wine-prefix if found.
 
 ## Changes on this fork
