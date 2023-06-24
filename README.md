@@ -15,7 +15,7 @@ installs the entire font family including emoji, also installs to wine-prefix if
 Open `terminal` and run the command below
 
 ```
-git clone https://github.com/SpudGunMan/segoe-ui-linux
+git clone https://github.com/mrbvrz/segoe-ui-linux
 chmod +x install.sh
 ./install.sh
 ```
