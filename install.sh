@@ -30,14 +30,22 @@ WINE_FONT_DIR="$HOME/.wine/drive_c/windows/Fonts/"
 #  DEST_DIR="$HOME/.local/share/fonts/Microsoft/TrueType/Segoe UI/"
 #fi
 
+args="$1"
+
 # Check Internet Conection
 function cekkoneksi(){
+    if [[ "$args" == "--i-have-internet" ]]; then
+        echo -e "$BLUE [ * ] Internet connection check skipped"
+        sleep 1
+        return
+    fi
     echo -e "$BLUE [ * ] Checking for internet connection"
     sleep 1
     echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1
     if [ $? -ne 0 ]; then
         echo -e "$RED [ X ]$BLUE Internet Connection ➜$RED OFFLINE!\n";
         echo -e "$RED Sorry, you really need an internet connection...."
+        echo -e "$RED ./install.sh --i-have internet to skip this check"
         exit 0
     else
         echo -e "$GREEN [ ✔ ]$BLUE Internet Connection ➜$GREEN CONNECTED!\n";
