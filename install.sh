@@ -1,6 +1,5 @@
 #!/bin/bash
 # mrbvrz - https://hasansuryaman.com
-# Updated 2023 with more fonts in family Kelly Keeton /SpudGunMan
 
 # Colours Variables
 RESTORE='\033[0m'
@@ -20,21 +19,19 @@ LCYAN='\033[01;36m'
 WHITE='\033[01;37m'
 
 # Destination directory
-#ROOT_UID=0
-DEST_DIR="/usr/share/fonts/Microsoft/TrueType/SegoeUI/"
+ROOT_UID=0
+if [ "$UID" -eq "$ROOT_UID" ]; then
+  DEST_DIR="/usr/share/fonts/Microsoft/TrueType/SegoeUI/"
+else
+  DEST_DIR="$HOME/.local/share/fonts/Microsoft/TrueType/SegoeUI/"
+fi
 WINE_FONT_DIR="$HOME/.wine/drive_c/windows/Fonts/"
-
-#if [ "$UID" -eq "$ROOT_UID" ]; then
-#  DEST_DIR="/usr/local/share/fonts/Microsoft/TrueType/Segoe UI/"
-#else
-#  DEST_DIR="$HOME/.local/share/fonts/Microsoft/TrueType/Segoe UI/"
-#fi
 
 # Check Internet Conection
 function cekkoneksi(){
     echo -e "$BLUE [ * ] Checking for internet connection"
     sleep 1
-    echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1
+    echo -e "GET http://google.com HTTP/1.0\n\n" | curl google.com > /dev/null 2>&1
     if [ $? -ne 0 ]; then
         echo -e "$RED [ X ]$BLUE Internet Connection ➜$RED OFFLINE!\n";
         echo -e "$RED Sorry, you really need an internet connection...."
@@ -82,7 +79,7 @@ function continueFont(){
 }
 
 function fontinstall(){
-    sudo mkdir -p "$DEST_DIR"
+    mkdir -p "$DEST_DIR"
     if [ -d font ]; then
         cp font/segoeui.ttf "$DEST_DIR"/segoeui.ttf > /dev/null 2>&1 # regular
         cp font/segoeuib.ttf "$DEST_DIR"/segoeuib.ttf > /dev/null 2>&1 # bold
@@ -94,8 +91,6 @@ function fontinstall(){
         cp font/seguisli.ttf "$DEST_DIR"/seguisli.ttf > /dev/null 2>&1 # semilight italic
         cp font/seguisb.ttf "$DEST_DIR"/seguisb.ttf > /dev/null 2>&1 # semibold
         cp font/seguisbi.ttf "$DEST_DIR"/seguisbi.ttf > /dev/null 2>&1 # semibold italic
-        # extended fontpack 2023 spudgunman fork
-        # https://learn.microsoft.com/en-us/typography/font-list/segoe-ui-emoji
         cp font/seguibl.ttf "$DEST_DIR"/seguibl.ttf > /dev/null 2>&1 # bold light
         cp font/seguibli.ttf "$DEST_DIR"/seguibli.ttf > /dev/null 2>&1 # bold light italic
         cp font/seguiemj.ttf "$DEST_DIR"/seguiemj.ttf > /dev/null 2>&1 # emoji
@@ -113,8 +108,6 @@ function fontinstall(){
             cp font/seguisli.ttf "$WINE_FONT_DIR"/seguisli.ttf > /dev/null 2>&1 # semilight italic
             cp font/seguisb.ttf "$WINE_FONT_DIR"/seguisb.ttf > /dev/null 2>&1 # semibold
             cp font/seguisbi.ttf "$WINE_FONT_DIR"/seguisbi.ttf > /dev/null 2>&1 # semibold italic
-            # extended fontpack 2023 spudgunman fork
-            # https://learn.microsoft.com/en-us/typography/font-list/segoe-ui-emoji
             cp font/seguibl.ttf "$WINE_FONT_DIR"/seguibl.ttf > /dev/null 2>&1 # bold light
             cp font/seguibli.ttf "$WINE_FONT_DIR"/seguibli.ttf > /dev/null 2>&1 # bold light italic
             cp font/seguiemj.ttf "$WINE_FONT_DIR"/seguiemj.ttf > /dev/null 2>&1 # emoji
@@ -135,12 +128,11 @@ function fontinstall(){
         wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisli.ttf?raw=true -O "$DEST_DIR"/seguisli.ttf > /dev/null 2>&1 # semilight italic
         wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisb.ttf?raw=true -O "$DEST_DIR"/seguisb.ttf > /dev/null 2>&1 # semibold
         wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisbi.ttf?raw=true -O "$DEST_DIR"/seguisbi.ttf > /dev/null 2>&1 # semibold italic
-        # extended fontpack 2023 spudgunman fork
-        wget -q https://github.com/spudgunman/segoe-ui/raw/master/font/seguibl.ttf?raw=true -O "$DEST_DIR"/seguibl.ttf > /dev/null 2>&1 # bold light
-        wget -q https://github.comspudgunman/segoe-ui/raw/master/font/seguibli.ttf?raw=true -O "$DEST_DIR"/seguibli.ttf > /dev/null 2>&1 # bold light italic
-        wget -q https://github.comspudgunman/segoe-ui/raw/master/font/seguiemj.ttf?raw=true -O "$DEST_DIR"/seguiemj.ttf > /dev/null 2>&1 # emoji
-        wget -q https://github.comspudgunman/segoe-ui/raw/master/font/seguisym.ttf?raw=true -O "$DEST_DIR"/seguisym.ttf > /dev/null 2>&1 # symbol
-        wget -q https://github.comspudgunman/segoe-ui/raw/master/font/seguihis.ttf?raw=true -O "$DEST_DIR"/seguihis.ttf > /dev/null 2>&1 # historic
+        wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguibl.ttf?raw=true -O "$DEST_DIR"/seguibl.ttf > /dev/null 2>&1 # bold light
+        wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguibli.ttf?raw=true -O "$DEST_DIR"/seguibli.ttf > /dev/null 2>&1 # bold light italic
+        wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguiemj.ttf?raw=true -O "$DEST_DIR"/seguiemj.ttf > /dev/null 2>&1 # emoji
+        wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisym.ttf?raw=true -O "$DEST_DIR"/seguisym.ttf > /dev/null 2>&1 # symbol
+        wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguihis.ttf?raw=true -O "$DEST_DIR"/seguihis.ttf > /dev/null 2>&1 # historic
     fi
 
     fc-cache -f "$DEST_DIR"
