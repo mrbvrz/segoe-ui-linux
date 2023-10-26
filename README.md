@@ -21,7 +21,7 @@ chmod +x install.sh
 ./install.sh
 ```
 
-run `sudo ./install.sh` for system instalation
+optional: you can run `sudo ./install.sh` for system installation
 
 ## Sample:
 
