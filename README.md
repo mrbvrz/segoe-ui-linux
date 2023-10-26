@@ -16,6 +16,7 @@ Open `terminal` and run the command below
 
 ```
 git clone https://github.com/mrbvrz/segoe-ui-linux
+cd segoe-ui-linux
 chmod +x install.sh
 ./install.sh
 ```
