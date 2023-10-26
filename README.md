@@ -21,6 +21,8 @@ chmod +x install.sh
 ./install.sh
 ```
 
+run `sudo ./install.sh` for system instalation
+
 ## Sample:
 
 Github with Segoe UI font looks better (in the example below displays the [papirus-icon](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) repo)
