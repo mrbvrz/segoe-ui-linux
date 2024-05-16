@@ -31,14 +31,30 @@ WINE_FONT_DIR="$HOME/.wine/drive_c/windows/Fonts/"
 function cekkoneksi(){
     echo -e "$BLUE [ * ] Checking for internet connection"
     sleep 1
-    echo -e "GET http://google.com HTTP/1.0\n\n" | curl google.com > /dev/null 2>&1
-    if [ $? -ne 0 ]; then
-        echo -e "$RED [ X ]$BLUE Internet Connection ➜$RED OFFLINE!\n";
+    
+    # List all network interfaces
+    interfaces=$(ip -o link show | awk -F': ' '{print $2}')
+    
+    # Flag to track internet connection status
+    internet_connected=0
+    
+    # Iterate over each network interface and check internet connectivity
+    for interface in $interfaces; do
+        echo -e "Testing internet connectivity on interface: $interface"
+        if ping -c 1 -I $interface google.com &> /dev/null; then
+            echo -e "$GREEN [ ✔ ]$BLUE Internet Connection on interface $interface ➜$GREEN CONNECTED!\n"
+            internet_connected=1
+            break  # If connected on any interface, no need to continue testing
+        else
+            echo -e "$RED [ X ]$BLUE Internet Connection on interface $interface ➜$RED OFFLINE!\n"
+        fi
+    done
+    
+    # Check overall connection status
+    if [ $internet_connected -eq 0 ]; then
+        echo -e "$RED [ X ]$BLUE Internet Connection ➜$RED OFFLINE!\n"
         echo -e "$RED Sorry, you really need an internet connection...."
         exit 0
-    else
-        echo -e "$GREEN [ ✔ ]$BLUE Internet Connection ➜$GREEN CONNECTED!\n";
-        sleep 1
     fi
 }
 
